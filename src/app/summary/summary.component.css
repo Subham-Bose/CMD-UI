@@ -1,0 +1,37 @@
+.card {
+    /* background-color: rgb(235, 30, 30); */
+    /* grid-column-gap: 20px; */
+    color: #003C5F;
+    box-shadow: 1px 1px 3px darkslategray;
+
+    /* border-inline: 10px; */
+    /* padding: auto; */
+    width: calc(95%/3);
+    /* height: 100px; */
+    max-height: fit-content;
+    align-content: center;
+    margin: 5px;
+    /* align-self: center; */
+    /* align-items:center; */
+    /* contain:spacing 10px; */
+    /* border: 2px solid rgba(0, 0, 0, 0.46); */
+    border-radius: 15px;
+    padding: .5rem;
+    /* box-shadow: 10px; */
+    /* height: auto; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* display:flex; */
+}
+
+.cards {
+    height: 115px;
+    /* background-color: aqua; */
+    /* column-gap: 10px; */
+}
+
+#hr1 {
+    /* float:unset; */
+    /* position: 3% bottom; */
+    /* margin-top: auto; */
+}

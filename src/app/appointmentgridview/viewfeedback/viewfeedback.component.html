@@ -1,0 +1,49 @@
+<!-- 
+<div class="card-group">
+    <div class="card" >
+      <form [formGroup]="feedbackform" >
+        <section class="modal" >
+            <header class="modal-header" >
+                <h2 class="modal-title">FEEDBACK FORM:</h2>
+                <a href="#" class="modal-close">X</a>
+              </header>
+            <hr>
+            
+            <div class="modal-content">
+             <span *ngIf="feedback!=null">
+             <div  *ngFor="let r of feedback.Rating">
+                <label >{{r.Id}}. </label>
+                <label >{{r.Question.Statement}}</label><br><br>
+                <div class="radiogroup" *ngFor="let d of data" layout="row">
+                  <div *ngIf="d==r.Rating; else elseBlock">
+                  <input type="radio" ng-model="myVar" value="{{d}}" checked>{{d}}<br>
+                  
+                  </div>
+                  <ng-template #elseBlock><input type="radio" ng-model="myVar" value="{{d}}" >
+                   {{d}}</ng-template>
+                   
+                
+                </div>
+                
+              </div>
+            </span> 
+            </div>
+            <span  *ngIf="feedback!=null">
+            <div class="cmt" >
+                <h3>Additional Comment</h3>
+                <textarea ng-model="myTextarea" width="200" >{{feedback.AdditionalComment}}</textarea>
+              </div>
+            </span>  
+            
+              
+        </section>
+      </form>
+    </div>
+    </div>  -->
+  
+<!-- <div *ngFor="let r of rating">
+ {{r.Id}} 
+ {{r.Statement}}
+ {{r.Rating}}
+ {{r.AdditionalComments}}
+</div> -->

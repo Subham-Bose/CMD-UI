@@ -1,0 +1,287 @@
+{
+  "Comments": "sample string 2",
+  "Feedback": {
+    "Rating": [
+      {
+        "Question": {
+          "Statement": "sample string 2"
+        },
+        "Rating": 2
+      },
+      {
+        "Question": {
+          "Statement": "sample string 2"
+        },
+        "Rating": 2
+      }
+    ],
+    "AdditionalComments": "sample string 2"
+  },
+  "AppointmentDate": "2022-04-21T18:55:20.2255713+05:30",
+  "AppointmentTime": "00:00:00.1234567",
+  "AppointmentStatus": 1,
+  "Doctor": {
+    "FirstName": "sample string 2",
+    "LastName": "sample string 3",
+    "NPINumber": 4,
+    "PracticeLocation": "sample string 5",
+    "Specialities": [
+      {
+        "SpecialityName": "sample string 2",
+        "SpecialityCategory": {
+          "SpecialityCategoryName": "sample string 2"
+        }
+      },
+      {
+        "SpecialityName": "sample string 2",
+        "SpecialityCategory": {
+          "SpecialityCategoryName": "sample string 2"
+        }
+      }
+    ],
+    "ContactDetails": {
+      "PhoneNumber": "sample string 2",
+      "Email": "sample string 3"
+    },
+    "Slots": [
+      {
+        "SlotDate": "2022-04-21T18:55:20.2285629+05:30",
+        "StartTime": "00:00:00.1234567",
+        "SlotDuration": 4.1,
+        "Description": "sample string 5"
+      },
+      {
+        "SlotDate": "2022-04-21T18:55:20.2285629+05:30",
+        "StartTime": "00:00:00.1234567",
+        "SlotDuration": 4.1,
+        "Description": "sample string 5"
+      }
+    ],
+    "Recommedations": [
+      {
+        "PatientDetails": {
+          "Patient": {
+            "FirstName": "sample string 2",
+            "LastName": "sample string 3",
+            "Gender": 0,
+            "DOB": "2022-04-21T18:55:20.2295605+05:30",
+            "ContactDetails": {
+              "PhoneNumber": "sample string 2",
+              "Email": "sample string 3"
+            }
+          },
+          "BloodGroup": 0,
+          "VitalReadings": [
+            {
+              "Vital": {
+                "VitalName": "sample string 2",
+                "Measurement": "sample string 3"
+              },
+              "Reading": 2.1
+            },
+            {
+              "Vital": {
+                "VitalName": "sample string 2",
+                "Measurement": "sample string 3"
+              },
+              "Reading": 2.1
+            }
+          ],
+          "MedicalProblem": [
+            {
+              "ProblemName": "sample string 2"
+            },
+            {
+              "ProblemName": "sample string 2"
+            }
+          ],
+          "Issues": [
+            {
+              "Name": "sample string 2"
+            },
+            {
+              "Name": "sample string 2"
+            }
+          ],
+          "Allergies": [
+            {
+              "AllergyName": "sample string 2"
+            },
+            {
+              "AllergyName": "sample string 2"
+            }
+          ],
+          "Prescriptions": [
+            {
+              "Medicine": {
+                "MedicineName": "sample string 2"
+              },
+              "Doses": 2,
+              "Intake": "sample string 3",
+              "Span": 4,
+              "TimeOfDay": "sample string 5",
+              "AdditionalComments": "sample string 6"
+            },
+            {
+              "Medicine": {
+                "MedicineName": "sample string 2"
+              },
+              "Doses": 2,
+              "Intake": "sample string 3",
+              "Span": 4,
+              "TimeOfDay": "sample string 5",
+              "AdditionalComments": "sample string 6"
+            }
+          ],
+          "TestReports": [
+            {
+              "Test": {
+                "TestName": "sample string 2",
+                "Category": {
+                  "TestCategoryName": "sample string 2"
+                }
+              },
+              "Report": "sample string 2",
+              "Value": 3.1
+            },
+            {
+              "Test": {
+                "TestName": "sample string 2",
+                "Category": {
+                  "TestCategoryName": "sample string 2"
+                }
+              },
+              "Report": "sample string 2",
+              "Value": 3.1
+            }
+          ],
+          "SymptomDetails": {
+            "SymptomData": {
+              "Symptom": {
+                "SymptomName": "sample string 2"
+              },
+              "Reading": 2
+            }
+          }
+        }
+      },
+      {
+        "PatientDetails": {
+          "Patient": {
+            "FirstName": "sample string 2",
+            "LastName": "sample string 3",
+            "Gender": 0,
+            "DOB": "2022-04-21T18:55:20.2295605+05:30",
+            "ContactDetails": {
+              "PhoneNumber": "sample string 2",
+              "Email": "sample string 3"
+            }
+          },
+          "BloodGroup": 0,
+          "VitalReadings": [
+            {
+              "Vital": {
+                "VitalName": "sample string 2",
+                "Measurement": "sample string 3"
+              },
+              "Reading": 2.1
+            },
+            {
+              "Vital": {
+                "VitalName": "sample string 2",
+                "Measurement": "sample string 3"
+              },
+              "Reading": 2.1
+            }
+          ],
+          "MedicalProblem": [
+            {
+              "ProblemName": "sample string 2"
+            },
+            {
+              "ProblemName": "sample string 2"
+            }
+          ],
+          "Issues": [
+            {
+              "Name": "sample string 2"
+            },
+            {
+              "Name": "sample string 2"
+            }
+          ],
+          "Allergies": [
+            {
+              "AllergyName": "sample string 2"
+            },
+            {
+              "AllergyName": "sample string 2"
+            }
+          ],
+          "Prescriptions": [
+            {
+              "Medicine": {
+                "MedicineName": "sample string 2"
+              },
+              "Doses": 2,
+              "Intake": "sample string 3",
+              "Span": 4,
+              "TimeOfDay": "sample string 5",
+              "AdditionalComments": "sample string 6"
+            },
+            {
+              "Medicine": {
+                "MedicineName": "sample string 2"
+              },
+              "Doses": 2,
+              "Intake": "sample string 3",
+              "Span": 4,
+              "TimeOfDay": "sample string 5",
+              "AdditionalComments": "sample string 6"
+            }
+          ],
+          "TestReports": [
+            {
+              "Test": {
+                "TestName": "sample string 2",
+                "Category": {
+                  "TestCategoryName": "sample string 2"
+                }
+              },
+              "Report": "sample string 2",
+              "Value": 3.1
+            },
+            {
+              "Test": {
+                "TestName": "sample string 2",
+                "Category": {
+                  "TestCategoryName": "sample string 2"
+                }
+              },
+              "Report": "sample string 2",
+              "Value": 3.1
+            }
+          ],
+          "SymptomDetails": {
+            "SymptomData": {
+              "Symptom": {
+                "SymptomName": "sample string 2"
+              },
+              "Reading": 2
+            }
+          }
+        }
+      }
+    ]
+  },
+  "Patient": {
+    "FirstName": "sample string 2",
+    "LastName": "sample string 3",
+    "Gender": 0,
+    "DOB": "2022-04-21T18:55:20.2295605+05:30",
+    "ContactDetails": {
+      "PhoneNumber": "sample string 2",
+      "Email": "sample string 3"
+    }
+  }
+}

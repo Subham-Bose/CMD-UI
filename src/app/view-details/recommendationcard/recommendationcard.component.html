@@ -1,0 +1,49 @@
+<div class="pos">
+    <div class="card">
+      <div class="card-body wrap d-md-flex">
+        <div class="">
+          <div class="">
+            <form [formGroup]="recoForm">
+              <mat-form-field aprrearence="fill">
+                <h5>Recommendations</h5>
+                <br>
+                <p>Search</p>
+                <input
+                  (change)="search()"
+                  [(ngModel)]="searchText"
+                  matInput
+                  [matAutocomplete]="auto"
+                  (keydown.enter)="onselect()"
+                  formControlName="inputField"
+                  style="border: 20%"
+                />
+                <mat-autocomplete
+                  #auto="matAutocomplete"
+                  [displayWith]="displayFn"
+                >
+                  <mat-option *ngFor="let r of FilterDoctor" [value]="r">
+                    Dr.{{ r.Name }}</mat-option
+                  >
+                </mat-autocomplete>
+              </mat-form-field>
+            </form>
+          </div>
+        </div>
+        
+          <div class="col-5">
+            <div class="row">
+              <div class="col-2" *ngFor="let d of Doctor">
+                <div class="btn btn btn-sm"><br>
+                  <span class="recommendations" style="width:max-content;">
+                    Dr.{{ d.DoctorName
+                    }} &nbsp;<span (click)="removeselection(d)" class="bi bi-x-lg" ></span
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  

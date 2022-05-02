@@ -1,0 +1,39 @@
+<div>
+    <form #ngform="ngForm" (ngSubmit)="toggleData2()">
+      <div class="position">
+        <div
+          class="container p-10 my-5"
+          style="
+            border-radius: 15px;
+            background-color: white;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            box-shadow: 1px 1px 3px darkslategray;
+          "
+        >
+          <mat-card-title style="display: inline-block">Comment</mat-card-title>
+  
+          <!-- <button type="button" class="secondarybutton" (click)="toggleData1()">
+            Edit
+          </button>
+          <button type="submit" class="primarybutton">Save</button>
+   -->
+          <button type="button" class="secondarybutton" (click)="toggleData1()" *ngIf="!status" >Edit</button>
+      <button type="submit" class="primarybutton" *ngIf="status" >Save</button>
+          <br />
+          &nbsp; &nbsp;
+  
+          <span *ngIf="commentData">
+            <textarea
+              name="myTextBox"
+              id="txtBox"
+              [disabled]="enable()"
+              [(ngModel)]="commentData.Comment"
+              >{{ commentData.Comment }}</textarea
+            >
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+  

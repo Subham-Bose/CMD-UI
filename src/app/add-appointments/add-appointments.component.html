@@ -1,0 +1,93 @@
+<div class="container">
+    <mat-stepper labelPosition="bottom" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Select a Patient to book Appointment/Consultation</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Patient</mat-label>
+            <input matInput formControlName="patientDetail" [matAutocomplete]="auto" />
+            <mat-hint align="start">Select Patient</mat-hint>
+  
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFnForPatient">
+              <mat-option *ngFor="
+                  let patient of patientsRecommended
+                    | filterPipe: firstFormGroup.get('patientDetail').value
+                " [value]="patient">
+                {{ patient.Name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <div>
+            <button mat-button color="primary" matStepperNext [disabled]="firstFormGroup.invalid">
+              Confirm
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Choose reason / Type reason for Appointment/Consultation</ng-template>
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field appearance="fill" style="width: 80%">
+                <mat-label>Patient's Issue</mat-label>
+                <input matInput formControlName="issue" autocomplete="off" (input)="OnInput($event)"/>
+                <mat-hint align="start">Enter a new issue </mat-hint>                
+              </mat-form-field>
+              <mat-form-field appearance="fill" style="width: 80%">
+                <mat-label>Or enter reason for visit</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="reason" />
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-sm-3 btn btn-light secondStepBtn" style="padding-top: 10px" (click)="removeIssue()"
+                  *ngIf="patientIssue">
+                  {{ patientIssue }} <i class="bi bi-x-lg"></i>
+                </div>
+                <div class="col-sm-3 btn btn-light secondStepBtn" style="padding-top: 10px" (click)="removeReason()"
+                  *ngIf="secondFormGroup.get('reason').value != ''">
+                  {{ secondFormGroup.get('reason').value }} <i class="bi bi-x-lg"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button mat-button matStepperNext color="primary" (click)="OnIssuesSelect()">
+              Confirm
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <ng-template matStepLabel>Choose Date and Time, Confirm Booking</ng-template>
+        <div class="row">
+          <div class="calender-container col-4">
+            <mat-card class="inline-calender">
+              <mat-calendar [selected]="thirdFormGroup.get('date').value" (selectedChange)="updateFormDate($event)">
+              </mat-calendar>
+              <span *ngIf="!thirdFormGroup.get('date').value">Select a date of Appointment</span>
+            </mat-card>
+          </div>
+          <div class="timeslot-container col-8">
+            <div class="row">
+              <div class="col-sm-2" style="padding-top: 10px" *ngFor="let time of timeArray">
+                <div class="btn" [class]="
+                    thirdFormGroup.get('time').value == time
+                      ? 'btn-primary'
+                      : 'btn-light'
+                  " (click)="updateFormTime(time)">
+                  {{ time }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div>
+              <button class="btn btn-primary" (click)="ConfirmAppointment()" [disabled]="firstFormGroup.invalid || secondFormGroup.invalid || thirdFormGroup.invalid">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>

@@ -1,0 +1,31 @@
+<div style="margin-top:5%">
+  <mat-card class="patientCard">
+    <mat-card-header>
+      <img class="example-header-image" mat-card-avatar>
+      <mat-card-title id="t1">Patient</mat-card-title>
+      <mat-card-subtitle id="t2"><span>{{patientdata.Name}}</span></mat-card-subtitle>
+      <mat-card-subtitle id="t3"><span>{{patientdata.Gender}}, Age:{{patientdata.Age}}</span></mat-card-subtitle>
+    </mat-card-header>
+    <div>
+      <div class="my-call-mail">
+        <mat-card-content>
+          <span class="material-icons">call</span>
+          <span>{{patientdata.PhoneNumber}}</span>
+          <br>
+          <span class="material-icons">email</span>
+          <span>{{patientdata.Mail}}</span>
+        </mat-card-content>
+      </div>
+      <div class="my-dob-blood">
+        <hr style="width: 1px; height: 70px" id="vertical-rule" />
+        <mat-card-content>
+          <span class="material-icons">event</span>
+          <span>{{patientdata.DOB | date: "MM/dd/yyyy"}}</span>
+          <br>
+          <span class="material-icons">bloodtype</span>
+          <span>{{patientdata.BloodGroup}}</span>
+        </mat-card-content>
+      </div>
+    </div>
+  </mat-card>
+</div>
