@@ -8,7 +8,7 @@ import { SummaryDataService } from '../Services/summary-data.service';
   styleUrls: ['./summary.component.css'],
 })
 export class SummaryComponent implements OnInit {
-  doctorId = environment.doctorId;
+  doctorId = JSON.parse(localStorage.getItem('doctorId'));
   constructor(private data: SummaryDataService) {}
   summarydata: any = [];
   ngOnInit(): void {

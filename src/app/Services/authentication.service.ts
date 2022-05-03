@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../Model/user';
 import { firstValueFrom } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class AuthenticationService {
-  readonly rootUrl = 'http://localhost:44301/';
+  readonly rootUrl = environment.authUrl;
   constructor(private http: HttpClient) {}
-
-  user: any = { Name: '' };
 
   userAuthentication(userName, password) {
     var data =
@@ -23,7 +22,7 @@ export class AuthenticationService {
   }
   async getUserClaims() {
     const user = await firstValueFrom(
-      this.http.get(this.rootUrl + '/api/GetUser')
+      this.http.get(this.rootUrl + '/api/doctorId')
     );
     return user;
   }
@@ -32,7 +31,5 @@ export class AuthenticationService {
     return this.http.post(this.rootUrl + 'api/User/UserType/' + type, type);
   }
 
-  getUserDetails() {
-    return this.user;
-  }
+  getUserDetails() {}
 }

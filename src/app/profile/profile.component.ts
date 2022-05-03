@@ -11,7 +11,7 @@ import { DoctorFieldService } from '../Services/doctor-field.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  doctorId = environment.doctorId;
+  doctorId = JSON.parse(localStorage.getItem('doctorId'));
   doctorform: FormGroup;
   editable: boolean;
   doctor: any;

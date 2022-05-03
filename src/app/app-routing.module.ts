@@ -14,17 +14,22 @@ import { AppointmentConformationComponent } from './appointment-conformation/app
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'appointment-confirmation',component:AppointmentConformationComponent},
   {
-    path: 'app-dashboard',component: DashboardComponent,
-    // canActivate: [AuthGuard],
+    path: 'appointment-confirmation',
+    component: AppointmentConformationComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'app-dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
   },
   { path: 'app-patients-tab', component: PatientsTabComponent },
   { path: 'app-chatrooms-tab', component: ChatroomsTabComponent },
   { path: 'app-settings-tab', component: SettingsTabComponent },
   { path: 'view-details', component: ViewDetailsComponent },
-  // { path: 'login',redirectTo: '',pathMatch: 'full',},
-  { path:"app-navbar",component:NavbarComponent},
+  { path: 'login', redirectTo: '', pathMatch: 'full' },
+  { path: 'app-navbar', component: NavbarComponent },
 ];
 
 @NgModule({

@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router, NavigationExtras } from '@angular/router';
-import { environment } from 'src/environments/environment';
 import { AppointmentService } from '../appointment.service';
 import { Appointment } from '../Model/appointment.model';
 import { ViewfeedbackComponent } from './viewfeedback/viewfeedback.component';
@@ -18,7 +17,7 @@ export class AppointmentgridviewComponent implements OnInit {
   hasNext: boolean;
   hasPrev: boolean;
 
-  doctorId = environment.doctorId;
+  doctorId = JSON.parse(localStorage.getItem('doctorId'));
   @Input() status = '';
   defaultPic =
     'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png';
@@ -102,11 +101,7 @@ export class AppointmentgridviewComponent implements OnInit {
     this.changeStatus(data, this.doctorId);
   }
 
-  getAppointmentData(
-    doctorId: number,
-    pageNumber: number,
-    itemPerPage: number
-  ) {
+  getAppointmentData(doctorId, pageNumber: number, itemPerPage: number) {
     this._service
       .FetchAppointmentData(doctorId, pageNumber, itemPerPage)
       .subscribe({
@@ -139,7 +134,7 @@ export class AppointmentgridviewComponent implements OnInit {
   }
 
   filteredDataWithStatus(
-    doctorId: number,
+    doctorId,
     pageNumber: number,
     itemPerPage: number,
     status: string
@@ -177,7 +172,7 @@ export class AppointmentgridviewComponent implements OnInit {
       });
   }
 
-  changeStatus(data: any, doctorId: number) {
+  changeStatus(data: any, doctorId) {
     this._service.ChangeAppointmentStatus(data, doctorId).subscribe({
       error: (err) => console.log(err),
       complete: () => {

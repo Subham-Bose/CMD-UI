@@ -14,7 +14,7 @@ export class DoctorFieldService {
 
   //gets data from Database to UI
 
-  getDoctorprofile(id: number) {
+  getDoctorprofile(id) {
     var doctorurl = environment.doctorURL;
     return this.http.get(`${doctorurl}/api/doctors/doctorprofile/${id}`).pipe(
       map((d) => {

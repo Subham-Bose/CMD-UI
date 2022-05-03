@@ -32,7 +32,7 @@ export class AppointmentService {
     );
   }
 
-  FetchPatients(id: number) {
+  FetchPatients(id) {
     return this._http
       .get(`${this.patientDomain}/api/patients/allpatients`)
       .pipe(
@@ -61,7 +61,7 @@ export class AppointmentService {
     return this.confirmationData;
   }
 
-  ChangeAppointmentStatus(data: any, doctorId: number) {
+  ChangeAppointmentStatus(data: any, doctorId) {
     return this._http.patch(
       `${this.appointmentDomain}/api/appointments/appointment/changestatus/doctorId/${doctorId}`,
       data

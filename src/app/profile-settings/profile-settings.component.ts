@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
-//import { DoctorService } from '../doctor.service';
 import { Doctor } from '../Model/Doctor';
 import { Contact } from '../Model/DoctorContact';
-import { DoctorDataService } from '../Services/doctor-data.service';
 import { DoctorFieldService } from '../Services/doctor-field.service';
 import { DoctorProfileDataService } from '../Services/doctor-profile-data.service';
 
@@ -14,7 +12,7 @@ import { DoctorProfileDataService } from '../Services/doctor-profile-data.servic
   styleUrls: ['./profile-settings.component.css'],
 })
 export class ProfileSettingsComponent implements OnInit {
-  doctorId = environment.doctorId;
+  doctorId = JSON.parse(localStorage.getItem('doctorId'));
   doctors: any;
   temp: string | ArrayBuffer | null = '';
   doctorform: FormGroup;

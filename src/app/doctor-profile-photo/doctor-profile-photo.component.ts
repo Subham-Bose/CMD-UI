@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { DoctorProfileDataService } from '../Services/doctor-profile-data.service';
 
 @Component({
@@ -8,7 +7,7 @@ import { DoctorProfileDataService } from '../Services/doctor-profile-data.servic
   styleUrls: ['./doctor-profile-photo.component.css'],
 })
 export class DoctorProfilePhotoComponent implements OnInit {
-  doctorId = environment.doctorId;
+  doctorId = JSON.parse(localStorage.getItem('doctorId'));
   constructor(public doctorservice: DoctorProfileDataService) {}
   doctors: any;
   temp: string | ArrayBuffer | null = '';

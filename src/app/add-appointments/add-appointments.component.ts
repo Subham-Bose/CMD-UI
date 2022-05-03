@@ -6,8 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 import { AppointmentService } from '../appointment.service';
 import { PatientSearching } from '../Model/patientforsearch.model';
 
@@ -18,7 +17,7 @@ import { PatientSearching } from '../Model/patientforsearch.model';
 })
 export class AddAppointmentsComponent implements OnInit {
   inputValue: string = '';
-  doctorId = environment.doctorId;
+  doctorId = JSON.parse(localStorage.getItem('doctorId'));
   doctorName = 'John Doe';
 
   firstFormGroup: FormGroup;

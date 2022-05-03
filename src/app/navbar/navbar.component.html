@@ -6,7 +6,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <a class="navbar-brand">Appointments</a>
           <li class="nav-item">
-            <a class="nav-link active">
+            <a class="nav-link active" *ngIf="doctor">
               <i class="fa-solid fa-location-dot"></i>
               {{doctor.doctor_practice_location}}
               <i class="fa-solid fa-angle-down"></i>
@@ -38,6 +38,7 @@
           role="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
+          *ngIf="doctor"
         >
           {{ doctor.doctor_name }}
         </a>
@@ -53,10 +54,12 @@
           <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
         </ul>
       </div>
-      <img
-        src="{{ doctor.doctor_profile_image }}"
-        alt="Avatar"
-      />
+      <span *ngIf="doctor">
+        <img
+         [src]="doctor.doctor_profile_image"
+          alt="Avatar"
+        />
+      </span>
     </div>
   </div>
 </nav>

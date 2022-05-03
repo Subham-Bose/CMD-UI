@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  appointmentURL: 'https://localhost:44312',
-  doctorURL: 'https://localhost:44338',
-  patientURL: 'https://localhost:44374',
-  doctorId: 2,
+  authUrl: 'https://webapiauthnew.azurewebsites.net',
+  appointmentURL: 'https://cmdapiappointments.azurewebsites.net',
+  doctorURL: 'https://cmdapidoctors.azurewebsites.net',
+  patientURL: 'https://cmdapipatients.azurewebsites.net',
 };
 
 /*

@@ -13,6 +13,8 @@ import { DoctorFieldService } from '../Services/doctor-field.service';
 export class NavbarComponent implements OnInit {
   userClaims: any;
   doctor: any;
+
+  doctorId = JSON.parse(localStorage.getItem('doctorId'));
   constructor(
     public router: Router,
     private userService: AuthenticationService,
@@ -23,7 +25,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.doctorService.getDoctorprofile(environment.doctorId).subscribe({
+    this.doctorService.getDoctorprofile(this.doctorId).subscribe({
       next: (data) => (this.doctor = data),
       error: (err) => console.log(err),
     });
@@ -31,6 +33,7 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('userToken');
+    localStorage.removeItem('doctorId');
     this.userClaims = null;
     this.router.navigate(['']);
   }
