@@ -14,7 +14,6 @@ export class DoctorcardComponent implements OnInit {
     'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png';
 
   constructor(private data: DoctorDataService) {}
-  //ID = 4; //get this from view-details component
   doctordata: any;
   ngOnInit(): void {
     this.data.getAllIds(this.appointmentId).subscribe({
@@ -28,10 +27,5 @@ export class DoctorcardComponent implements OnInit {
         });
       },
     });
-
-    // this.data.getAllData().subscribe((allData) => {
-    //   console.log(allData);
-    //   this.doctordata = allData;
-    // });
   }
 }

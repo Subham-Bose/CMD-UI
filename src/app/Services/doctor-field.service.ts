@@ -1,40 +1,36 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Doctor } from '../Model/Doctor';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DoctorFieldService {
+  doctor: Doctor;
 
-    doctor: Doctor;
+  constructor(private http: HttpClient) {}
 
+  //gets data from Database to UI
 
-    url = 'https://localhost:44301/api/cmd/doctorprofile/';
-    constructor(private http: HttpClient) { }
+  getDoctorprofile(id: number) {
+    var doctorurl = environment.doctorURL;
+    return this.http.get(`${doctorurl}/api/doctors/doctorprofile/${id}`).pipe(
+      map((d) => {
+        var doctor = d;
+        console.log(doctor);
+        return doctor;
+      })
+    );
+  }
 
-    //gets data from Database to UI
-
-    getDoctorprofile(id: number) {
-        var doctorurl = this.url + id;
-        return this.http.get(doctorurl).pipe(
-            map((d) => {
-                var doctor = d;
-                console.log(doctor);
-                return doctor;
-            })
-        );
-    }
-
-    //Edit-Update Database from UI
-    updateDoctorprofile(id: number, data: any) {
-        var doctorurl = this.url;
-        this.http.put(doctorurl, data).subscribe({
-            next: (result) => console.log(result),
-            error: (err) => console.log(err)
-
-
-        })
-    }
+  //Edit-Update Database from UI
+  updateDoctorprofile(id: number, data: any) {
+    var doctorurl = environment.doctorURL;
+    this.http.put(`${doctorurl}/api/doctors/doctorprofile`, data).subscribe({
+      next: (result) => console.log(result),
+      error: (err) => console.log(err),
+    });
+  }
 }

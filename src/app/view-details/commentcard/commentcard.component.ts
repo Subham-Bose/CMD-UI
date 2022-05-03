@@ -13,31 +13,21 @@ export class CommentcardComponent implements OnInit {
   status = false;
   p = true;
   AptId = 4;
-  constructor(private data: CommentserviceService) {
-    // this.data.getAllData(this.AptId).subscribe( (allData)=>{
-    //   console.log(allData);
-    //   this.commentData=allData;
-    // });
-  }
+  constructor(private data: CommentserviceService) {}
+
   addcomment = new FormGroup({
     txtarea: new FormControl(''),
   });
+
   message: boolean = false;
   commentData: any = null;
   //commentData:string;
   ngOnInit(): void {
     this.data.getAllData(this.appointmentId).subscribe((allData) => {
-      console.log(allData);
       this.commentData = allData;
     });
   }
-  // saveData() {
-  //   this.data.savecommentData(this.appointmentId,this.addcomment.value).subscribe((result) => {
-  //     this.message = true;
-  //     console.log(result);
-  //     this.addcomment.reset({});
-  //   });
-  // }
+
   removeMessage() {
     this.message = false;
   }
@@ -51,14 +41,11 @@ export class CommentcardComponent implements OnInit {
     this.data
       .editcomments(this.commentData.Id, this.commentData)
       .subscribe((allData) => {
-        console.log(allData);
         this.commentData = allData;
       });
     this.data.getAllData(this.commentData.Id).subscribe((allData) => {
-      console.log(allData);
       this.commentData = allData;
     });
-    console.log(this.commentData);
   }
   enable() {
     return this.p;

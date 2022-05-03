@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 //import { getLocaleDateFormat } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommentserviceService {
-  appointmentDomain = 'https://localhost:44312/';
+  appointmentDomain = environment.appointmentURL;
 
   constructor(private http: HttpClient) {}
 

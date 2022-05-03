@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DoctorDataService {
-  // url1 = 'https://localhost:44314/api/GetDoctors';
-  doctorDomain = 'https://localhost:44338/';
-  appointmentDomain = 'https://localhost:44312';
+  doctorDomain = environment.doctorURL;
+  appointmentDomain = environment.appointmentURL;
   constructor(private http: HttpClient) {}
 
   ID = 1; //

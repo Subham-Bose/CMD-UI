@@ -19,14 +19,16 @@ export class PrescriptioncardComponent implements OnInit {
     private prescription: PrescriptionServiceService
   ) {}
 
-  deletePrescription(appointmentId: number, PrescriptionId: number) {
+  deletePrescription(PrescriptionId: number) {
     this.prescription
-      .DeletePrescription(appointmentId, PrescriptionId)
+      .DeletePrescription(this.appointmentId, PrescriptionId)
       .subscribe({
         error: (err) => console.log(err),
 
         complete: () => {
-          window.location.reload();
+          this.prescription.GetPrescription(this.appointmentId).subscribe({
+            next: (item: any[]) => (this.medicinePrescription = item),
+          });
         },
       });
   }

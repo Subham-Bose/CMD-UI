@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 // import {  recommendation } from './recommendation/model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecommendationService {
-  appointmentDomain = 'https://localhost:44312';
-  doctorDomain = 'https://localhost:44338';
+  appointmentDomain = environment.appointmentURL;
+  doctorDomain = environment.doctorURL;
 
   constructor(private http: HttpClient) {}
 
@@ -21,12 +22,6 @@ export class RecommendationService {
       recommendationData
     );
   }
-
-  // removeRecommendation(id:number){
-  //   this.http.delete(this.url+ id).subscribe({
-  //     complete:()=>console.log("deleted",id)
-  //   })
-  // }
 
   deleteTest(recommendationId) {
     return this.http.delete(

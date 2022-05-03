@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
 import { PrescriptionModel } from '../Model/prescriptionDetails';
 import { MedicineModel } from '../Model/medicine';
+import { environment } from 'src/environments/environment';
 // import { PrescriptionModel } from './model/prescriptionDetails';
 // import { MedicineModel } from './model/medicine';
 @Injectable({
@@ -10,7 +11,7 @@ import { MedicineModel } from '../Model/medicine';
 })
 export class PrescriptionServiceService {
   prescription: PrescriptionModel;
-  appointmentDomain = 'https://localhost:44312';
+  appointmentDomain = environment.appointmentURL;
   constructor(private http: HttpClient) {}
 
   GetPrescription(appointmentId): any {
@@ -67,6 +68,5 @@ export class PrescriptionServiceService {
       `${this.appointmentDomain}/addprescription/${appointmentId}`,
       prescription
     );
-    //AddPrescription/{patientDetailId}>>=(`${this.apiUrl}${PatientDetailId}/${PrescriptionId}`)
   }
 }

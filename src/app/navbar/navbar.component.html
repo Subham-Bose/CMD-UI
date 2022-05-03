@@ -8,14 +8,7 @@
           <li class="nav-item">
             <a class="nav-link active">
               <i class="fa-solid fa-location-dot"></i>
-              Location
-              <i class="fa-solid fa-angle-down"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">
-              <i class="fa-solid fa-stethoscope"></i>
-              Dr.Alex
+              {{doctor.doctor_practice_location}}
               <i class="fa-solid fa-angle-down"></i>
             </a>
           </li>
@@ -46,7 +39,7 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          {{userClaims.Name }}
+          {{ doctor.doctor_name }}
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li><a class="dropdown-item" href="#">Status : Online</a></li>
@@ -61,44 +54,9 @@
         </ul>
       </div>
       <img
-        src="https://images.tribuneindia.com/cms/gall_content/2019/4/2019_4$largeimg15_Monday_2019_083425749.jpg"
+        src="{{ doctor.doctor_profile_image }}"
         alt="Avatar"
       />
     </div>
-    <!-- <div class="d-flex" id="profiledropdown">
-      <div>
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          {{ user.Name }}
-        </a>
-      </div>
-      <div class="dropdown">
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Status : Online</a></li>
-
-          <li>
-            <a class="dropdown-item" href="app-settings-tab">Account Setting</a>
-          </li>
-
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-
-          <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <img
-          src="https://images.tribuneindia.com/cms/gall_content/2019/4/2019_4$largeimg15_Monday_2019_083425749.jpg"
-          alt="Avatar"
-          id="avatar"
-        />
-      </div>
-    </div> -->
   </div>
 </nav>

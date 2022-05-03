@@ -75,9 +75,10 @@ export class TestcardComponent implements OnInit {
     this.testReports.forEach((report) => {
       if (report.TestId == t.Id) {
         reportID = report.Id;
-        console.log(reportID, this.appointmentId);
 
-        this.services.deleteTest(reportID, this.appointmentId).subscribe();
+        this.services.deleteTest(reportID, this.appointmentId).subscribe({
+          error: (err) => console.log(err),
+        });
       }
     });
 

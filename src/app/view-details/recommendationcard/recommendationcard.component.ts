@@ -28,15 +28,12 @@ export class RecommendationcardComponent implements OnInit {
       inputField: new FormControl(),
     });
     this.data.getAllData().subscribe((allData: any[]) => {
-      console.log(allData);
-
       allData.forEach((item) => {
         this.Doctors.push(new recommendation(item.DoctorId, item.DoctorName));
       });
     });
 
     this.FilterDoctor = this.Doctors;
-    console.log(this.FilterDoctor);
   }
   displayFn(reco: recommendation): string {
     return reco && reco.Name ? reco.Name : '';
@@ -47,12 +44,10 @@ export class RecommendationcardComponent implements OnInit {
       DoctorId: this.recoForm.get('inputField').value.Id,
       DoctorName: this.recoForm.get('inputField').value.Name,
     };
-    console.log(recommendationdata);
 
     this.data.addRecommendation(recommendationdata).subscribe({
       next: (response) => {
         this.Doctor.push(response);
-        console.log(this.Doctor);
       },
       complete: () => {
         this.recoForm.patchValue({
@@ -74,6 +69,5 @@ export class RecommendationcardComponent implements OnInit {
     this.FilterDoctor = this.Doctors.filter((doc) =>
       doc.Name.toLowerCase().includes(this.searchText.toLowerCase())
     );
-    console.log('searchcalled');
   }
 }

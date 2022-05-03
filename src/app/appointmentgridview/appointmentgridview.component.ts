@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router, NavigationExtras } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { AppointmentService } from '../appointment.service';
 import { Appointment } from '../Model/appointment.model';
 import { ViewfeedbackComponent } from './viewfeedback/viewfeedback.component';
@@ -17,7 +18,7 @@ export class AppointmentgridviewComponent implements OnInit {
   hasNext: boolean;
   hasPrev: boolean;
 
-  doctorId = 2;
+  doctorId = environment.doctorId;
   @Input() status = '';
   defaultPic =
     'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png';
@@ -113,8 +114,6 @@ export class AppointmentgridviewComponent implements OnInit {
           this.fetchedAppointments = [];
           var appointmentData = response['AppointmentBasicInfo'];
 
-          console.log(appointmentData);
-
           for (var val of appointmentData as any) {
             this.fetchedAppointments.push(
               new Appointment(
@@ -131,8 +130,6 @@ export class AppointmentgridviewComponent implements OnInit {
           this.currentPage = response['CurrentPage'];
           this.hasNext = response['HasNext'];
           this.hasPrev = response['HasPrevious'];
-
-          console.log(this.hasNext, this.hasPrev);
         },
         error: (err) => {
           this.error = err.message;
@@ -172,8 +169,6 @@ export class AppointmentgridviewComponent implements OnInit {
           this.currentPage = response['CurrentPage'];
           this.hasNext = response['HasNext'];
           this.hasPrev = response['HasPrevious'];
-
-          console.log(this.hasNext, this.hasPrev);
         },
         error: (err) => {
           this.error = err.message;

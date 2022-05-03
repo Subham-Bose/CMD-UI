@@ -1,5 +1,5 @@
 h3 {
-    color: darkblue;
+    color: rgb(5, 5, 67);
     text-shadow: 2px 2px 4px;
     margin: 5px;
 }
@@ -21,8 +21,8 @@ textarea {
     height: 30px;
     width: 100%;
     border: none;
-    color: darkblue;
-    border-bottom: 2px solid darkblue;
+    color: rgb(5, 5, 67);
+    border-bottom: 2px solid rgb(5, 5, 67);
     background-color: transparent;
     margin-bottom: 10px;
     outline: none;
@@ -30,24 +30,24 @@ textarea {
 }
 
 .primarybutton {
-    background-color: #0e0e3f;
+    background-color: rgb(5, 5, 67);
     border-radius: 5px 5px 5px 5px;
     padding: 8px 13px;
     text-align: center;
     color: white;
-    border: #0e0e3f;
+    border: rgb(5, 5, 67);
     margin-left: 50px;
 
 }
 
 .secondarybutton {
-    background-color: #0e0e3f;
+    background-color: rgb(5, 5, 67);
     border-radius: 5px 5px 5px 5px;
     padding: 8px 13px;
     text-align: center;
     color: white;
     margin-left: 50px;
-    border: #0e0e3f;
+    border: rgb(5, 5, 67);
 
 }
 

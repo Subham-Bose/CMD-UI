@@ -32,27 +32,5 @@ export class PatientcardComponent implements OnInit {
           next: (response) => (this.patientdata = response),
         }),
     });
-
-    // this.data.getAllData(this.appointmentId).subscribe((allData) => {
-    //   console.log(allData);
-    //   this.patientdata = allData;
-    // });
   }
-  // DOBToAge(birthdate: Date): number {
-  //   return moment().diff(birthdate, 'years');
-  // }
-  // Gender(gender: any) {
-  //   if (gender == 0) {
-  //     return 'Male';
-  //   } else if (gender == 1) {
-  //     return 'Female';
-  //   } else {
-  //     return 'Other';
-  //   }
-  // }
-  // BloodGroup(groupID:number)
-  // {
-  // var BloodGroup=["A+", "B+", "AB+", 'O+', 'A-', 'B-', 'AB-', 'O-']
-  //   return BloodGroup[groupID]
-  // }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { DoctorProfileDataService } from '../Services/doctor-profile-data.service';
 
 @Component({
@@ -7,12 +8,13 @@ import { DoctorProfileDataService } from '../Services/doctor-profile-data.servic
   styleUrls: ['./doctor-profile-photo.component.css'],
 })
 export class DoctorProfilePhotoComponent implements OnInit {
+  doctorId = environment.doctorId;
   constructor(public doctorservice: DoctorProfileDataService) {}
   doctors: any;
   temp: string | ArrayBuffer | null = '';
 
   ngOnInit(): void {
-    this.doctorservice.getData().subscribe((e) => {
+    this.doctorservice.getData(this.doctorId).subscribe((e) => {
       this.doctors = e;
     });
     if (this.doctors == undefined) {
@@ -37,7 +39,8 @@ export class DoctorProfilePhotoComponent implements OnInit {
     myReader.onloadend = (e) => {
       this.doctors.doctor_profile_image = myReader.result.toString();
       //this.temp = myReader.result.toString();
-      this.doctors.doctor_profile_image="https://img.freepik.com/free-photo/portrait-smiling-male-doctor_171337-1532.jpg?size=626&ext=jpg&ga=GA1.1.683797051.1649916745"
+      this.doctors.doctor_profile_image =
+        'https://img.freepik.com/free-photo/portrait-smiling-male-doctor_171337-1532.jpg?size=626&ext=jpg&ga=GA1.1.683797051.1649916745';
       console.log(this.doctors.doctor_profile_image);
     };
     // this.doctors.doctorProfileImage = this.temp?.toString() || ""

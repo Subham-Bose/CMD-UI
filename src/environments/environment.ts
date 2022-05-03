@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  appointmentURL: 'https://localhost:44312',
+  doctorURL: 'https://localhost:44338',
+  patientURL: 'https://localhost:44374',
+  doctorId: 2,
 };
 
 /*

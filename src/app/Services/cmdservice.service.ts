@@ -1,12 +1,13 @@
 import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CmdserviceService {
-  appointmentDomain = 'https://localhost:44312';
+  appointmentDomain = environment.appointmentURL;
 
   constructor(private http: HttpClient) {}
 

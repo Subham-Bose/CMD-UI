@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VitalDTO } from '../Model/vital.model';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class VitalService {
   constructor(private http: HttpClient) {}
 
-  appointmentDomain = 'https://localhost:44312/';
+  appointmentDomain = environment.appointmentURL;
 
   getData(id) {
     return this.http.get<VitalDTO>(

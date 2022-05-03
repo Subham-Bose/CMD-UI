@@ -14,28 +14,15 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="app-dashboard" id="Dashboard">
-            <span *ngIf="router.url === '/app-dashboard'"> Dashboard </span>
             <span class="material-icons" id="icon"> leaderboard </span>
+            <span *ngIf="router.url === '/app-dashboard'"> Dashboard </span>
           </a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="app-patients-tab" id="Patients">
-            <span *ngIf="router.url === '/app-dashboard'"> Patients </span>
-
-            <span class="material-icons" id="icon"> person </span>
-          </a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="app-chatrooms-tab" id="Chat-Room">
-            <span *ngIf="router.url === '/app-dashboard'"> Chat Rooms </span>
-            <span class="material-icons" id="icon"> forum </span>
-          </a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="app-settings-tab" id="Settings">
+            <span class="material-icons" id="icon"> settings </span>
             <span *ngIf="router.url === '/app-dashboard'"> Settings </span>
 
-            <span class="material-icons" id="icon"> settings </span>
           </a>
         </li>
       </ul>

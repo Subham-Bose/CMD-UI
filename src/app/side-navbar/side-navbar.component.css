@@ -3,7 +3,7 @@
     /* display: block;  */
     /* position: absolute; */
     height: 750px;
-    background-color: rgb(23, 23, 97);
+    background-color: rgb(5, 5, 67);
     /* color:white; */
     padding-left: 15px;
     position:fixed;
@@ -26,6 +26,6 @@
     /* align-self: right; */
     /* width: full; */
 
-    float: right;
+    float: left;
     padding-left: 15px;
 }

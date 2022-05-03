@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Doctor } from '../Model/doctor.model';
 
 @Injectable({
@@ -11,9 +12,9 @@ export class DoctorProfileDataService {
   setUrl = 'https://localhost:44301/api/doctor';
   //https://localhost:44311/
   constructor(private http: HttpClient) {}
-  getData(): any {
+  getData(doctorId): any {
     return this.http.get(
-      'https://cmdapidoctors.azurewebsites.net/api/doctors/doctor/profile/1'
+      `${environment.doctorURL}/api/doctors/doctor/profile/${doctorId}`
     );
   }
 

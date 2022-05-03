@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { AppointmentService } from '../appointment.service';
 import { PatientSearching } from '../Model/patientforsearch.model';
 
@@ -17,7 +18,7 @@ import { PatientSearching } from '../Model/patientforsearch.model';
 })
 export class AddAppointmentsComponent implements OnInit {
   inputValue: string = '';
-  doctorId = 2;
+  doctorId = environment.doctorId;
   doctorName = 'John Doe';
 
   firstFormGroup: FormGroup;
@@ -68,7 +69,6 @@ export class AddAppointmentsComponent implements OnInit {
     this.service.FetchPatients(this.doctorId).subscribe({
       next: (data) => (this.patientsRecommended = data),
       error: (err) => console.log(err),
-      complete: () => console.log(this.patientsRecommended),
     });
   }
 
@@ -91,7 +91,6 @@ export class AddAppointmentsComponent implements OnInit {
     this.secondFormGroup.patchValue({
       issues: this.patientIssue,
     });
-    console.log(this.secondFormGroup);
   }
   updateFormDate(event: any) {
     var date = this.datepipe.transform(event, 'yyyy-MM-dd');
@@ -115,12 +114,9 @@ export class AddAppointmentsComponent implements OnInit {
 
     this.service.PostFormData(data).subscribe({
       next: (response) => {
-        console.log('Add appointment component', response);
         this.service.SetAppointmentConfirmationData(response);
       },
       error: (err) => {
-        console.log(err);
-
         window.alert(err.message);
         window.location.reload();
       },
