@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { PatientSearching } from './Model/patientforsearch.model';
 
 @Injectable({
@@ -12,8 +13,8 @@ export class AppointmentService {
   appointment: any;
   constructor(private _http: HttpClient) {}
 
-  appointmentDomain = 'https://localhost:44312';
-  patientDomain = 'https://localhost:44374';
+  appointmentDomain = environment.appointmentURL;
+  patientDomain = environment.patientURL;
 
   FetchAppointmentData(id: number, page, itemsPerpage) {
     return this._http.get(
