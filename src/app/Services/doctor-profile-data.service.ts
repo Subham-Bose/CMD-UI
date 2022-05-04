@@ -19,9 +19,11 @@ export class DoctorProfileDataService {
   }
 
   putData(doctor: Doctor) {
-    this.http.put(this.setUrl, doctor).subscribe({
-      next: (result) => console.log(result),
-      error: (err) => console.log(err),
-    });
+    this.http
+      .put(`${environment.doctorURL}/api/doctors/doctor/profile`, doctor)
+      .subscribe({
+        next: (result) => console.log(result),
+        error: (err) => console.log(err),
+      });
   }
 }

@@ -28,12 +28,18 @@ export class NavbarComponent implements OnInit {
     this.doctorService.getDoctorprofile(this.doctorId).subscribe({
       next: (data) => (this.doctor = data),
       error: (err) => console.log(err),
+      complete: () =>
+        localStorage.setItem(
+          'DoctorName',
+          JSON.stringify(this.doctor.doctor_name)
+        ),
     });
   }
 
   logout() {
     localStorage.removeItem('userToken');
     localStorage.removeItem('doctorId');
+    localStorage.removeItem('DoctorName');
     this.userClaims = null;
     this.router.navigate(['']);
   }

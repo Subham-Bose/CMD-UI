@@ -17,8 +17,8 @@ import { PatientSearching } from '../Model/patientforsearch.model';
 })
 export class AddAppointmentsComponent implements OnInit {
   inputValue: string = '';
-  doctorId = JSON.parse(localStorage.getItem('doctorId'));
-  doctorName = 'John Doe';
+  doctorId = '';
+  doctorName = '';
 
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -69,6 +69,9 @@ export class AddAppointmentsComponent implements OnInit {
       next: (data) => (this.patientsRecommended = data),
       error: (err) => console.log(err),
     });
+
+    this.doctorId = JSON.parse(localStorage.getItem('doctorId'));
+    this.doctorName = JSON.parse(localStorage.getItem('DoctorName'));
   }
 
   displayFnForPatient(patient: PatientSearching): string {
