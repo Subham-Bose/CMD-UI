@@ -13,19 +13,19 @@ export class RecommendationService {
   constructor(private http: HttpClient) {}
 
   getAllData() {
-    return this.http.get(`${this.doctorDomain}/api/doctors/alldoctors`);
+    return this.http.get(`${this.doctorDomain}/api/doctors/doctor/alldoctors`);
   }
 
   addRecommendation(recommendationData: any) {
     return this.http.post(
-      `${this.appointmentDomain}/api/recommendation`,
+      `${this.appointmentDomain}/recommendation`,
       recommendationData
     );
   }
 
   deleteTest(recommendationId) {
     return this.http.delete(
-      `${this.appointmentDomain}/api/recommendation/${recommendationId}`
+      `${this.appointmentDomain}/recommendation/${recommendationId}`
     );
   }
 }
